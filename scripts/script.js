@@ -39,7 +39,7 @@ function checkPath() {
 //Fetch API
 async function fetchData() {
   let data = [];
-  await fetch("../products.json")
+  await fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((json) => (data = json));
   data.map((item, key) => {
