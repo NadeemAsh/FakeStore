@@ -206,6 +206,19 @@ li {
   background-color: #6e245e;
 }
 
+.dropdown .dropdownHeading .checkoutButton.disable {
+  background-color: #eee;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  border: unset;
+  outline: unset;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  pointer-events: none;
+}
+
 .dropdown hr {
   background-color: #2424242f;
   border: unset;
@@ -260,6 +273,23 @@ li {
 
 .cartItemList .cartItem .itemDetails h5 {
   opacity: 0.5;
+}
+
+.cartItemList .cartItem .itemDetails .removeFromCart {
+  background-color: var(--main);
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  border: unset;
+  outline: unset;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  float: right;
+}
+
+.cartItemList .cartItem .itemDetails .removeFromCart:hover {
+  background-color: #6e245e;
 }
 
 .cartItemList .cartItem .itemImage {
