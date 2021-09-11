@@ -32,6 +32,7 @@ window.addEventListener("DOMContentLoaded", checkPath);
 function checkPath() {
   let currentPath = window.location.href;
   if (
+    currentPath === "https://nadeemash.github.io/FakeStore/index.html" ||
     currentPath ===
       "https://nadeemash.github.io/FakeStore/pages/products.html" ||
     currentPath === "http://127.0.0.1:5500/pages/products.html"
