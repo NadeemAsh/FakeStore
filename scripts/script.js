@@ -27,18 +27,18 @@ if (cart.getCountOfItemsInCart() === 0) {
   updatePrice();
 }
 
-window.addEventListener("DOMContentLoaded", fetchData);
+window.addEventListener("DOMContentLoaded", checkPath);
 
-// function checkPath() {
-//   // let currentPath = window.location.href;
-//   // if (
-//   //   currentPath.trim() ===
-//   //   "https://nadeemash.github.io/FakeStore/pages/products.html"
-//   // ) {
-//   //   fetchData();
-//   // }
-//   fetchData();
-// }
+function checkPath() {
+  let currentPath = window.location.href;
+  if (
+    currentPath ===
+      "https://nadeemash.github.io/FakeStore/pages/products.html" ||
+    currentPath === "http://127.0.0.1:5500/pages/products.html"
+  ) {
+    fetchData();
+  }
+}
 
 //Fetch API
 async function fetchData() {
