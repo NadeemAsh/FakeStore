@@ -10,13 +10,21 @@ const productsRoot = document.querySelector(".products");
 const checkOutButton = document.querySelector(".checkoutButton");
 const cartItemList = document.querySelector(".cartItemList");
 
+//Price Span
+const price = document.querySelector(".price");
+
 //Initialize Cart
 let cart = new Cart();
 
 if (cart.getCountOfItemsInCart() === 0) {
+  updateCartCount();
   disbaleCheckOut();
+  updatePrice();
 } else {
+  updateCartCount();
+  updateCartList();
   enableCheckOut();
+  updatePrice();
 }
 
 window.addEventListener("DOMContentLoaded", checkPath);
@@ -44,18 +52,25 @@ function updateCartCount() {
   cartCount.innerHTML = cart.getCountOfItemsInCart();
 }
 
-function addToCart(item) {
-  cart.addItemToCart(item);
+function updatePrice() {
+  price.innerText = "₹ " + cart.calculateTotal();
+}
+
+function addToCart(item, id) {
+  cart.addItemToCart(item, id);
   updateCartCount();
   updateCartList();
+  updatePrice();
 }
 
 function updateCartList() {
   cartItemList.innerHTML = "";
-  cart.cartList.map((item) => {
+  let itemList = JSON.parse(localStorage.InCart);
+  for (let i = 0; i < itemList.length; i++) {
+    let item = JSON.parse(localStorage.getItem(itemList[i]));
     let cartListItem = createCartListElement(item);
     cartItemList.appendChild(cartListItem);
-  });
+  }
   enableCheckOut();
 }
 
@@ -115,7 +130,7 @@ function createProductCards(item, key) {
       image: item.image,
       quantity: 1,
     };
-    addToCart(itemObj);
+    addToCart(itemObj, item.id);
   });
 
   //Add all this to parent
@@ -143,10 +158,12 @@ function createCartListElement(item) {
 
   let heading = document.createElement("h4");
   let category = document.createElement("h5");
+  let quantity = document.createElement("h5");
   let price = document.createElement("span");
 
   heading.innerHTML = returnTrimmedString(item.title);
   category.innerHTML = item.category;
+  quantity.innerHTML = item.quantity;
   price.innerHTML = `₹ ${item.price}`;
 
   let button = document.createElement("button");
@@ -154,11 +171,19 @@ function createCartListElement(item) {
   button.innerText = "Remove";
   //add to our cart
   button.addEventListener("click", function () {
-    console.log(item);
+    // cart.removeItemFromCart(item.id);
+    // let len = localStorage.CartLength;
+    // if (len > 0) {
+    //   updateCartList();
+    // }
+    // else{
+    //   disbaleCheckOut();
+    // }
   });
 
   infoDiv.appendChild(heading);
   infoDiv.appendChild(category);
+  infoDiv.appendChild(quantity);
   infoDiv.appendChild(price);
   infoDiv.appendChild(button);
 

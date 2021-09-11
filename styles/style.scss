@@ -152,6 +152,22 @@ li {
     align-items: center;
     justify-content: space-between;
 
+    h1{
+      font-size: 18px;
+    }
+
+    .checkoutDetials{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .price{
+        color: #242424;
+        margin-right: 12px;
+        font-weight: 800;
+      }
+    }
+
     .checkoutButton {
       background-color: var(--main);
       padding: 8px 12px;

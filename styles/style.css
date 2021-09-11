@@ -190,6 +190,28 @@ li {
           justify-content: space-between;
 }
 
+.dropdown .dropdownHeading h1 {
+  font-size: 18px;
+}
+
+.dropdown .dropdownHeading .checkoutDetials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dropdown .dropdownHeading .checkoutDetials .price {
+  color: #242424;
+  margin-right: 12px;
+  font-weight: 800;
+}
+
 .dropdown .dropdownHeading .checkoutButton {
   background-color: var(--main);
   padding: 8px 12px;
