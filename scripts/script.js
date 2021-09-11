@@ -31,7 +31,10 @@ window.addEventListener("DOMContentLoaded", checkPath);
 
 function checkPath() {
   let currentPath = window.location.href;
-  if (currentPath.trim() === "https://nadeemash.github.io/FakeStore/pages/products.html") {
+  if (
+    currentPath.trim() ===
+    "https://nadeemash.github.io/FakeStore/pages/products.html"
+  ) {
     fetchData();
   }
 }
@@ -39,7 +42,7 @@ function checkPath() {
 //Fetch API
 async function fetchData() {
   let data = [];
-  await fetch("https://fakestoreapi.com/products")
+  await fetch("../products.json")
     .then((res) => res.json())
     .then((json) => (data = json));
   data.map((item, key) => {
