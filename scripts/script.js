@@ -32,7 +32,6 @@ window.addEventListener("DOMContentLoaded", checkPath);
 function checkPath() {
   let currentPath = window.location.href;
   if (
-    currentPath === "https://nadeemash.github.io/FakeStore/index.html" ||
     currentPath ===
       "https://nadeemash.github.io/FakeStore/pages/products.html" ||
     currentPath === "http://127.0.0.1:5500/pages/products.html"
@@ -163,12 +162,12 @@ function createCartListElement(item) {
 
   let heading = document.createElement("h4");
   let category = document.createElement("h5");
-  let quantity = document.createElement("h5");
+  let quantity = document.createElement("h3");
   let price = document.createElement("span");
 
   heading.innerHTML = returnTrimmedString(item.title);
   category.innerHTML = item.category;
-  quantity.innerHTML = item.quantity;
+  quantity.innerHTML = 'Quantity: '+item.quantity;
   price.innerHTML = `₹ ${item.price}`;
 
   let button = document.createElement("button");

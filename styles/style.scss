@@ -217,21 +217,35 @@ li {
   .cartItem {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content:space-between;
     margin: 6px 12px;
 
     .itemDetails {
+      width: 100%;
       padding: 6px;
       margin-left: 12px;
 
+      h3{
+        font-size: 14px;
+        opacity: 0.7;
+        margin: 6px 0;
+      }
+      
       h4 {
         overflow: hidden;
         display: inline-block;
         opacity: 0.9;
         margin: 0;
       }
+
       h5 {
+        font-size: 12px;
         opacity: 0.5;
+      }
+
+      span{
+        font-weight: 700;
+        font-size: 18px;
       }
 
       .removeFromCart {
@@ -251,7 +265,8 @@ li {
     }
 
     .itemImage {
-      width: 40px;
+      width: 15%;
+
     }
   }
 }

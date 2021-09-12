@@ -4,6 +4,50 @@
   --black: #242424;
 }
 
+.cartItemList {
+  .cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 6px 12px;
+
+    .itemDetails {
+      width: 100%;
+      padding: 6px;
+      margin-left: 12px;
+
+      h4 {
+        overflow: hidden;
+        display: inline-block;
+        opacity: 0.9;
+        margin: 0;
+      }
+      h5 {
+        opacity: 0.5;
+      }
+
+      .removeFromCart {
+        background-color: var(--main);
+        padding: 8px 12px;
+        border-radius: 6px;
+        color: white;
+        border: unset;
+        outline: unset;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        float: right;
+        &:hover {
+          background-color: #6e245e;
+        }
+      }
+    }
+
+    .itemImage {
+      height: 40px;
+    }
+  }
+}
+
 .container {
   max-width: 90%;
   top: 85px;

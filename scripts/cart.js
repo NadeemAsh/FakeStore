@@ -80,10 +80,8 @@ class Cart {
       let sum = 0;
       for (let i = 0; i < itemList.length; i++) {
         let item = JSON.parse(localStorage.getItem(itemList[i]));
-        console.log(item);
         sum += item.price * item.quantity;
       }
-      console.log(sum);
       return sum;
     }
   }
